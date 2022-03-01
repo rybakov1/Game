@@ -1,56 +1,96 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using System.Collections.Generic;
-using System;
+using Game.NetworkMessages;
 
-namespace Server
+namespace Game.Server
 {
+
+#pragma warning disable CS8618
+	class Msgs
+	{
+		public Message inMsg;
+		public Message outMsg;
+	}
+#pragma warning restore CS8618
+
+
 	class Program
 	{
 
 		static int port = 26665;
-		//static string ip_address = "127.0.0.1";
-
-		static IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, port);
-		static Socket listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+		static TcpListener listener;
+		static Dictionary<TcpClient, Msgs> clients = new();
 
 		static void Main(string[] args)
 		{
 			Run();
 		}
 
-		static List<TcpClient> clients = new();
-
-		
 		// Main server method
 		static void Run()
 		{
-			TcpListener listener = new(endPoint);
+			IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, port);
+			listener = new(endPoint);
 			listener.Start();
 
-			// Game 
 			while (true)
 			{
-				
+				AcceptConnections(ref clients); // adds new connections
+				ReceiveInputs(ref clients); // gets incoming messages from all connections
+				DoGameLogic(ref clients); // processes all messages, creates outgoing messages
+				SendResults(ref clients); // sends outgoing messages to all connections
 			}
-
-			listener.Stop();
 		}
 
-
-		static void AcceptConnections(TcpListener listener)
+		/// <summary>
+		/// Adds new connections.
+		/// </summary>
+		/// <param name="clients"></param>
+		static void AcceptConnections(ref Dictionary<TcpClient, Msgs> clients)
 		{
 			if (listener.Pending())
 			{
 				var newClient = listener.AcceptTcpClient();
-				SendServerInfo(newClient);
-
+				clients.Add(newClient, new Msgs());
 			}
 		}
 
-		static void SendServerInfo(TcpClient client)
+		/// <summary>
+		/// Gets incoming messages from all connections.
+		/// </summary>
+		/// <param name="clients"></param>
+		static void ReceiveInputs(ref Dictionary<TcpClient, Msgs> clients)
+		{
+			var clientList = clients.ToList();
+
+			foreach (var client in clientList)
+			{
+				client.Value.inMsg = (Message)client.Key.GetStream().Read();
+			}
+		}
+
+		/// <summary>
+		/// Processes all messages, creates outgoing messages.
+		/// </summary>
+		/// <param name="clients"></param>
+		/// <exception cref="NotImplementedException"></exception>
+		static void DoGameLogic(ref Dictionary<TcpClient, Msgs> clients)
 		{
 			throw new NotImplementedException();
+		}
+
+		/// <summary>
+		/// Sends outgoing messages to all connections.
+		/// </summary>
+		/// <param name="clients"></param>
+		static void SendResults(ref Dictionary<TcpClient, Msgs> clients)
+		{
+			var clientList = clients.ToList();
+
+			foreach (var client in clientList)
+			{
+				client.Key.GetStream().Write((byte[])client.Value.outMsg);
+			}
 		}
 	}
 }
