@@ -32,8 +32,7 @@ namespace Server
 			// Game 
 			while (true)
 			{
-				// Потребитель выходного канала работает с ограниченной функциональностью из-за отсутствия зависимой службы: Microsoft.VisualStudio.Shell.OutputChannelStore (0.1).
-
+				
 			}
 
 			listener.Stop();
