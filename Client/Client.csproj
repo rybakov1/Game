@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Models\" />
-    <Folder Include="Sprites\" />
+    <Folder Include="Sprites\PlayerIdle\" />
   </ItemGroup>
 
 </Project>

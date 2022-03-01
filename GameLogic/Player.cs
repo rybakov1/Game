@@ -1,17 +1,16 @@
 ﻿namespace Game.Player
 {
-    internal class Player
+    public class Player
     {
         public string Name { get; set; }
         public int Hp { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
-        public Player(string name, int hp, int x, int y) { 
-            this.Name = name;
-            this.Hp = hp;
-            this.X = x;
-            this.Y = y;
+        public int PosX { get; set; }
+        public int PosY { get; set; }
+        public Player(string Name, int Hp, int PosX, int PosY) { 
+            this.Name = Name;
+            this.Hp = Hp;
+            this.PosX = PosX;
+            this.PosY = PosY;
         }
-
     }
 }
