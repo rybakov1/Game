@@ -27,5 +27,9 @@ namespace Game.Entity
             this.DeathFrames = deathFrames;
             this.Sprite = sprite;
         }
+        public void Move(int dirX, int dirY) { 
+            PosX += dirX;
+            PosY += dirY;    
+        }
     }
 }
