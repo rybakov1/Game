@@ -1,4 +1,4 @@
-﻿namespace GameLogic
+﻿namespace Game.Message
 {
     public class Message
     {

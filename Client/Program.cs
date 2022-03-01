@@ -1,4 +1,4 @@
-namespace Client
+namespace Game.Client
 {
     internal static class Program
     {
