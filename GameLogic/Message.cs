@@ -37,8 +37,5 @@ namespace Game.NetworkMessages
             serializer.Serialize(writer, msg);
             return ms.ToArray();
         }
-
-
-
-        }
+    }
 }
