@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cda74d8c-b5f5-486a-b394-e293ef07f67a": {
+      "ProjectGuid": "cda74d8c-b5f5-486a-b394-e293ef07f67a",
+      "DisplayName": "Server",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "cfa923c5-b1e4-48ba-83aa-e5b1dc2b20a4": {
+      "ProjectGuid": "cfa923c5-b1e4-48ba-83aa-e5b1dc2b20a4",
+      "DisplayName": "Client",
+      "ColorIndex": 1
+    },
+    "f1ecd076-8717-46e6-a7f4-96812c01bb77": {
+      "ProjectGuid": "f1ecd076-8717-46e6-a7f4-96812c01bb77",
+      "DisplayName": "Client",
+      "ColorIndex": 2
+    },
+    "3d9513e9-b857-45c4-a3d3-839ffb3e375f": {
+      "ProjectGuid": "3d9513e9-b857-45c4-a3d3-839ffb3e375f",
+      "DisplayName": "GameLogic",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
