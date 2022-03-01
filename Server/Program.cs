@@ -21,9 +21,8 @@ namespace Server
 
 		static List<TcpClient> clients = new();
 
-		/// <summary>
-		/// Main server method
-		/// </summary>
+		
+		// Main server method
 		static void Run()
 		{
 			TcpListener listener = new(endPoint);
