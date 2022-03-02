@@ -4,20 +4,15 @@ namespace Game.Entity
 {
     public class Entity
     {
-        public string Name { get; set; }
-        public int Hp { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }
-
         public int IdleFrames;
         public int WalkFrames;
         public int AttackFrames;
         public int DeathFrames;
 
         public Image Sprite;
-        public Entity(string name, int hp, int posX, int posY, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image sprite) { 
-            this.Name = name;
-            this.Hp = hp;
+        public Entity(int posX, int posY, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image sprite) { 
             this.PosX = posX;
             this.PosY = posY;
 

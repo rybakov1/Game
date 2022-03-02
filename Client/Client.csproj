@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Sprites\PlayerIdle\" />
+    <ProjectReference Include="..\GameLogic\GameLogic.csproj" />
   </ItemGroup>
 
 </Project>

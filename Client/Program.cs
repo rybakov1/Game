@@ -1,3 +1,5 @@
+using Client;
+
 namespace Game.Client
 {
     internal static class Program

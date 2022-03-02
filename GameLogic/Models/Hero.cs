@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLogic.Models
+namespace Game.Models
 {
     public static class Hero
     {
