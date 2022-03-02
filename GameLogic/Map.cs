@@ -2,15 +2,15 @@
 {
 	public class Map
 	{
-		public TerrainTile[,] TerrinTiles;
+		public TerrainTile[,] TerrainTiles;
 		public ObjectTile[,] ObjectTiles;
 		private int _width;
 		private int _height;
 
 		public int Height
 		{
-			get => _height; 
-			set => _height = value;
+			get => _height;
+			init => _height = value;
 		}
 		public int Width
 		{
@@ -23,8 +23,8 @@
 			_width = width;
 			_height = height;
 
-			TerrinTiles = new TerrainTile[width, height];
-			TerrinTiles.Initialize();
+			TerrainTiles = new TerrainTile[width, height];
+			TerrainTiles.Initialize();
 			ObjectTiles = new ObjectTile[width, height];
 			ObjectTiles.Initialize();
 		}
@@ -36,7 +36,7 @@
 		{
 			for (int x = 0; x < Width; x++)
 				for (int y = 0; y < Height; y++)
-					TerrinTiles[x, y] = tile;
+					TerrainTiles[x, y] = tile;
 		}
 	}
 }
