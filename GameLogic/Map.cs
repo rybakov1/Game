@@ -15,8 +15,8 @@ namespace Game.Logic
 
 		public int Height
 		{
-			get => _height; 
-			set => _height = value;
+			get => _height;
+			init => _height = value;
 		}
 		public int Width
 		{
